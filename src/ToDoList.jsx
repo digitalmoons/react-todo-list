@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 
 export default function ToDoList() {
   const [tasks, setTasks] = useState([]);
@@ -6,9 +6,12 @@ export default function ToDoList() {
 
   // adds new input to task list, resets in put. marks as not-completed
   const addTask = () => {
+    console.log(input, "this is input")
+    // const oldTasks = [...tasks];
     if (input.trim()) {
-      setTasks([...tasks], {text: input, completed: false});
+      setTasks([...tasks, {text: input, completed: false}]);
       setInput("");
+      console.log("TASKS:", tasks)
     }
   }
 
